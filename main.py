@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, Form, Security, Depends
 from fastapi.security.api_key import APIKeyHeader
-from duckduckgo_search import DDGS
+from ddgs import DDGS
 import os
 
 api_key_header = APIKeyHeader(name="ESCRUTA_INTERNAL_API_KEY", auto_error=False)
