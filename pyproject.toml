@@ -1,0 +1,14 @@
+[project]
+name = "escruta-search"
+version = "0"
+readme = "README.md"
+authors = [{ name = "Francisco Mesa", email = "hola@francids.com" }]
+requires-python = ">=3.12"
+dependencies = [
+  "duckduckgo-search>=8.0.0",
+  "fastapi[standard]>=0.134.0",
+  "python-multipart>=0.0.22",
+]
+
+[dependency-groups]
+dev = ["ty>=0.0.24"]
