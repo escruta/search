@@ -1,23 +1,18 @@
 # Escruta - Search
 
-**Escruta Search** is a dedicated microservice for web search within the Escruta platform. Built with Python, FastAPI and DDGS (Dux Distributed Global Search). Allows users to search the web directly from their notebooks, returning structured results (title, link, snippet) for AI processing.
+Dedicated microservice for web search within the Escruta platform. Allows users to search the web directly from their notebooks, returning structured results (title, link, snippet) for AI processing.
+
+Built with Python, FastAPI, and DDGS.
 
 > [!IMPORTANT]
 > This service is a required component of the Escruta ecosystem. It must be accessible to the Core service for proper web search functionality.
 
 ## Getting Started
 
-### Prerequisites
-
-- Python (version 3.12 or higher).
-- [uv](https://docs.astral.sh/uv/) package manager.
-
-### Installation
-
 1. `uv sync` - Install dependencies
-2. `uv run fastapi dev` - Start the development server
+2. `uv run --env-file .env fastapi run --port 8001` - Start the development server
 
-The search service will be available at [localhost:8000](http://localhost:8000) by default.
+The search service will be available at [localhost:8001](http://localhost:8001). It is consumed by [Core](../core) at this URL (configured via `ESCRUTA_SEARCH_URL`).
 
 ## Configuration
 
@@ -28,14 +23,3 @@ The application is secured and configured using environment variables. These mus
 | Variable                   | Description                                           | Default    |
 | -------------------------- | ----------------------------------------------------- | ---------- |
 | `ESCRUTA_INTERNAL_API_KEY` | Internal API Key for service-to-service communication | (Required) |
-
-### Development Scripts
-
-- `uv run fastapi dev` - Start development server with auto-reload
-- `uv run fastapi run` - Start production server
-
-## Technology Stack
-
-- **Runtime**: Python 3.12+ with [uv](https://docs.astral.sh/uv/) for lightning-fast dependency management.
-- **Framework**: FastAPI for high-performance, robust API endpoints.
-- **Search**: [DDGS](https://pypi.org/project/ddgs/) (`ddgs`) metasearch engine aggregating results from multiple backends.
