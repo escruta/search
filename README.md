@@ -1,5 +1,9 @@
 # Escruta - Search
 
+> [!CAUTION]
+> **This repository has been deprecated.**
+> Its functionality has been merged into the unified [Helper](https://github.com/escruta/helper) service.
+
 Dedicated microservice for web search within the Escruta platform. Allows users to search the web directly from their notebooks, returning structured results (title, link, snippet) for AI processing.
 
 Built with Python, FastAPI, and DDGS.
@@ -12,7 +16,7 @@ Built with Python, FastAPI, and DDGS.
 1. `uv sync` - Install dependencies
 2. `uv run --env-file .env fastapi run --port 8001` - Start the development server
 
-The search service will be available at [localhost:8001](http://localhost:8001). It is consumed by [Core](../core) at this URL (configured via `ESCRUTA_SEARCH_URL`).
+The search service will be available at [localhost:8001](http://localhost:8001). It is consumed by [Core](https://github.com/escruta/core) at this URL (configured via `ESCRUTA_SEARCH_URL`).
 
 ## Configuration
 
